@@ -1,0 +1,24 @@
+PODS:
+  - JGProgressHUD (2.2)
+  - Kingfisher (7.3.1)
+  - SnapKit (5.6.0)
+
+DEPENDENCIES:
+  - JGProgressHUD
+  - Kingfisher
+  - SnapKit
+
+SPEC REPOS:
+  trunk:
+    - JGProgressHUD
+    - Kingfisher
+    - SnapKit
+
+SPEC CHECKSUMS:
+  JGProgressHUD: d83d7a981b85d11205e19ff8ad5bb9c40571c847
+  Kingfisher: f411ab4902e733fc0c40522920fb5a236d7a7334
+  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+
+PODFILE CHECKSUM: 5ac493249ae104850c83e3e2d914fe8ae74dc41c
+
+COCOAPODS: 1.11.3
