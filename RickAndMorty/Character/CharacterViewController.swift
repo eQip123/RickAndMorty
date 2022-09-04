@@ -17,16 +17,23 @@ protocol CharacterViewDelegate: AnyObject {
 class CharacterViewController: BaseFirstController {
      var presenter: CharacterPresenterDelegate!
     private var character = [ResultReq]()
-
+    
+    lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.register(CharacterTableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.rowHeight = 100
+        tableView.separatorColor = .clear
+        tableView.backgroundView = UIImageView(image: UIImage(named: "1_background"))
+        tableView.contentMode = .scaleAspectFit
+        return tableView
+    }()
+    
     override func setupView() {
         view.addSubview(tableView)
         tableView.dataSource = self
         tableView.delegate = self
         presenter.getCharacterList()
-        
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.title = "Rick and Morty"
-        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        setupNavigationBar()
     }
     override func setupConstraints() {
         tableView.snp.makeConstraints { make in
@@ -35,8 +42,12 @@ class CharacterViewController: BaseFirstController {
             make.leading.trailing.equalToSuperview()
         }
     }
+    func setupNavigationBar() {
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.title = "Rick and Morty"
+        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+    }
 }
-
 extension CharacterViewController: CharacterViewDelegate {
     func presentCharacterList(characterList: [ResultReq]) {
         character = characterList

@@ -16,21 +16,11 @@ class BaseFirstController: UIViewController {
         view.backgroundColor = .colorShadow
         return view
     }()
-    lazy var tableView: UITableView = {
-        let tableView = UITableView()
-        tableView.register(CharacterTableViewCell.self, forCellReuseIdentifier: "cell")
-        tableView.rowHeight = 100
-        tableView.backgroundView = UIImageView(image: UIImage(named: "1_background"))
-        tableView.contentMode = .scaleAspectFit
-        return tableView
-    }()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
         setupConstraints()
     }
-    
     func showProgress() {
         progressView.show(in: view)
     }
@@ -43,6 +33,4 @@ class BaseFirstController: UIViewController {
     open func setupView() {
         
     }
-    
-    
 }

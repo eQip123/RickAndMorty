@@ -24,7 +24,7 @@ class LocationTableViewCell: UITableViewCell {
     }
     private func setupSubview() {
         self.addSubview(titleLabel)
-        titleLabel.frame = CGRect(x: 0, y: 0, width: 300, height: 8)
+        titleLabel.frame = CGRect(x: 0, y: 0, width: 300, height: 50)
         titleLabel.center = center
     }
     override func prepareForReuse() {
